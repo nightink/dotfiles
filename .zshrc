@@ -10,7 +10,8 @@ export EDITOR='vim'
 ZSH_THEME="robbyrussell"
 
 # Example aliases
-alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+# brew install tree
+# alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias zshconfig="subl ~/.zshrc"
 
