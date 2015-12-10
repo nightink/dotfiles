@@ -7,9 +7,7 @@ export EDITOR='vim'
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="robbyrussell"
-# ZSH_THEME="random"
-ZSH_THEME="nebirhos"
+ZSH_THEME="robbyrussell"
 
 # Example aliases
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"

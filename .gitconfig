@@ -1,10 +1,13 @@
 [user]
   name = nightink
   email = chceyes@gmail.com
+
 [core]
   excludesfile = ~/.gitignore_global
+
 [alias]
   ci = commit
+  cv = commit -v
   co = checkout
   br = branch
   st = status
@@ -32,11 +35,16 @@
 
   # change last commit message
   recommit = commit --amend
+
+  # all parents branch
+  pb = log --all --graph --decorate
+
 [color]
   ui = true
   branch = auto
   diff = auto
   status = auto
+
 [color "branch"]
   current = yellow reverse
   local = yellow
@@ -52,10 +60,12 @@
   required = true
   clean = git media clean %f
   smudge = git media smudge %f
+
 [filter "hawser"]
   clean = git hawser clean %f
   smudge = git hawser smudge %f
   required = true
+
 [filter "lfs"]
   clean = git lfs clean %f
   smudge = git lfs smudge %f
@@ -63,9 +73,12 @@
 
 [push]
   default = matching
+
 [i18n]
   commitencoding = utf8
+
 [commit]
   template = ~/.git-commit-template.txt
+
 [diff]
   algorithm = patience
