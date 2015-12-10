@@ -1,0 +1,33 @@
+[submodule ".vim_runtime"]
+	path = .vim_runtime
+	url = git@github.com:nightink/vimrc.git
+[submodule ".vim/bundle/ctrlsf.vim"]
+	path = .vim/bundle/ctrlsf.vim
+	url = git@github.com:dyng/ctrlsf.vim.git
+[submodule ".vim/bundle/indentLine"]
+	path = .vim/bundle/indentLine
+	url = git@github.com:Yggdroot/indentLine.git
+[submodule ".vim/bundle/javascript-syntax"]
+	path = .vim/bundle/javascript-syntax
+	url = git@github.com:jelera/vim-javascript-syntax.git
+[submodule ".vim/bundle/jsdoc"]
+	path = .vim/bundle/jsdoc
+	url = git@github.com:heavenshell/vim-jsdoc.git
+[submodule ".vim/bundle/json"]
+	path = .vim/bundle/json
+	url = git@github.com:elzr/vim-json.git
+[submodule ".vim/bundle/node"]
+	path = .vim/bundle/node
+	url = git@github.com:moll/vim-node.git
+[submodule ".vim/bundle/nerdtree-git-plugin"]
+	path = .vim/bundle/nerdtree-git-plugin
+	url = git@github.com:Xuyuanp/nerdtree-git-plugin.git
+[submodule ".vim/bundle/jsx"]
+	path = .vim/bundle/jsx
+	url = git@github.com:mxw/vim-jsx.git
+[submodule ".vim/bundle/velocity"]
+	path = .vim/bundle/velocity
+	url = git@github.com:lepture/vim-velocity.git
+[submodule ".vim/bundle/es6"]
+	path = .vim/bundle/es6
+	url = git@github.com:isRuslan/vim-es6.git
