@@ -2,6 +2,8 @@
 export ZSH=$HOME/.oh-my-zsh
 export NODE_PATH=/usr/local/lib/node_modules
 export EDITOR='vim'
+# Node.js mirror
+export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -14,6 +16,11 @@ ZSH_THEME="robbyrussell"
 # alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias zshconfig="subl ~/.zshrc"
+# npm mirror
+alias cnpm="npm --registry=https://registry.npm.taobao.org \
+--cache=$HOME/.npm/.cache/cnpm \
+--disturl=https://npm.taobao.org/dist \
+--userconfig=$HOME/.cnpmrc"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
