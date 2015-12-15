@@ -14,8 +14,8 @@
 
   # shows list of files that have a merge conflict
   conflicts = diff --name-only --diff-filter=U
-  changes = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-
+  changes = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  history = log --graph --decorate --color
   # unstages a file. use like 'git unstage filename'
   unstage = reset HEAD --
 
@@ -37,7 +37,7 @@
   recommit = commit --amend
 
   # all parents branch
-  pb = log --all --graph --decorate
+  pb = log --all --graph --decorate --color
 
 [color]
   ui = true
