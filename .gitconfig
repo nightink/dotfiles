@@ -36,7 +36,7 @@
   recommit = commit --amend
 
   # all parents branch
-  pb = log --all --graph --decorate --color
+  la = log --all --graph --decorate --color
 
 [color]
   ui = true

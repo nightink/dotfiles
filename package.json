@@ -1,0 +1,26 @@
+{
+  "name": "dotfiles",
+  "version": "1.0.0",
+  "description": "my dotfiles management",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "link": "node run.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nightink/dotfiles.git"
+  },
+  "keywords": [
+    "dotfile"
+  ],
+  "author": "nightink",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nightink/dotfiles/issues"
+  },
+  "homepage": "https://github.com/nightink/dotfiles#readme",
+  "dependencies": {
+    "eslint-config-egg": "^1.0.2"
+  }
+}
