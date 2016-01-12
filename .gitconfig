@@ -28,7 +28,9 @@
   here = status .
 
   # undo last commit
-  undo = reset HEAD~1
+  # brew install git-extras
+  # git undo
+  # undo = reset HEAD~1
 
   last = log -1 HEAD
 

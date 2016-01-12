@@ -20,7 +20,5 @@
     "url": "https://github.com/nightink/dotfiles/issues"
   },
   "homepage": "https://github.com/nightink/dotfiles#readme",
-  "dependencies": {
-    "eslint-config-egg": "^1.0.2"
-  }
+  "dependencies": {}
 }

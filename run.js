@@ -1,16 +1,18 @@
+
 'use strict';
 
 const fs = require('fs');
 const files = fs.readdirSync(__dirname);
 const ignorePaths = [
-  '.git', 
-  '.gitignore', 
+  '.DS_Store',
+  '.git',
+  '.gitignore',
   'README.md',
   'git_submodule_init.sh',
   '.gitmodules',
   'package.json',
   'run.js',
-  'npm-debug.log'
+  'npm-debug.log',
 ];
 
 const dotfiles = files.filter((file) => ignorePaths.indexOf(file) < 0);
@@ -22,13 +24,13 @@ dotfiles.forEach((fileOrDir) => {
   try {
     fs.statSync(dotSymLink);
     console.warn('sym link %s is exist', dotSymLink);
-  } catch(_) {
-    if(_.code !=='ENOENT') {
-      console.error(_);
+  } catch (err) {
+    if (err.code !== 'ENOENT') {
+      console.error(err);
       return;
     }
-    
-    console.log('sym link fileOrDir %s', fileOrDir);
+
+    console.log('create sym link fileOrDir %s', fileOrDir);
     fs.symlinkSync(`${__dirname}/${fileOrDir}`, dotSymLink);
   }
-})
+});
