@@ -31,3 +31,6 @@
 [submodule ".vim/bundle/es6"]
 	path = .vim/bundle/es6
 	url = git@github.com:isRuslan/vim-es6.git
+[submodule ".vim/bundle/swift"]
+	path = .vim/bundle/swift
+	url = git@github.com:keith/swift.vim.git

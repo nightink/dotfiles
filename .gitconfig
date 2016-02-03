@@ -23,6 +23,7 @@
 
   # shows diff only for files staged to commit
   new = diff --cached
+  new-br = checkout -b
 
   # shows only changes to files in current directory
   here = status .
@@ -36,6 +37,7 @@
 
   # change last commit message
   recommit = commit --amend
+  rename-br = branch -M
 
   # all parents branch
   la = log --all --graph --decorate --color
