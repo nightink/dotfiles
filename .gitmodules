@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/swift"]
 	path = .vim/bundle/swift
 	url = git@github.com:keith/swift.vim.git
+[submodule ".vim/bundle/trailing-whitespace"]
+	path = .vim/bundle/trailing-whitespace
+	url = git@github.com:bronson/vim-trailing-whitespace.git

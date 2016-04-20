@@ -21,6 +21,7 @@ set tabstop=2
 
 " gbk 编码格式
 set fileencodings=ucs-bom,utf-8,euc-cn,cp936,default,latin1
+set enc=utf-8
 
 " bundle install
 call pathogen#infect('~/.vim/bundle/{}')

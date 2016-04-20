@@ -85,3 +85,9 @@
 
 [diff]
   algorithm = patience
+
+[color "diff-highlight"]
+  oldHighlight = red bold 52
+  oldNormal = red bold
+  newNormal = green bold
+  newHighlight = green bold 22
