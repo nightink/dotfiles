@@ -75,7 +75,7 @@
   required = true
 
 [push]
-  default = matching
+  default = simple
 
 [i18n]
   commitencoding = utf8

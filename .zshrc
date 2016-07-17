@@ -65,7 +65,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=/usr/local/bin:~/tmpbin:$PATH
+export PATH=~/tmpbin:$PATH
 export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -78,9 +78,8 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-alias wrd="atom ~/diary/`date +%Y-%m-%d.md`"
 
-export PROMPT="😂  $PROMPT"
+export PROMPT="😂 🤐 👻  $PROMPT"
 
 #Docker
-eval "$(docker-machine env default)"
+# eval "$(docker-machine env default)"
