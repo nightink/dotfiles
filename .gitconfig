@@ -4,6 +4,7 @@
 
 [core]
   excludesfile = ~/.gitignore_global
+  ignorecase = false
 
 [alias]
   ci = commit
@@ -23,7 +24,6 @@
 
   # shows diff only for files staged to commit
   new = diff --cached
-  new-br = checkout -b
 
   # shows only changes to files in current directory
   here = status .
@@ -37,27 +37,14 @@
 
   # change last commit message
   recommit = commit --amend
-  rename-br = branch -M
+  newbr = checkout -b
+  renamebr = branch -M
 
   # all parents branch
   la = log --all --graph --decorate --color
 
-[color]
-  ui = true
-  branch = auto
-  diff = auto
-  status = auto
-
-[color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
-
-[color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red
-  new = cyan
+  track = update-index --no-assume-unchanged
+  untrack = update-index --assume-unchanged
 
 [filter "media"]
   required = true
@@ -85,9 +72,36 @@
 
 [diff]
   algorithm = patience
+  compactionHeuristic = true
+
+[color]
+  ui = true
+  branch = auto
+  diff = auto
+  status = auto
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = 242 238
+  frag = 239 236
+  old = 167 normal
+  new = 030 normal
+  context = 240
+  commit = 246 024
 
 [color "diff-highlight"]
-  oldHighlight = red bold 52
-  oldNormal = red bold
-  newNormal = green bold
-  newHighlight = green bold 22
+  # oldHighlight = red bold 52
+  # oldNormal = red bold
+  # newNormal = green bold
+  # newHighlight = green bold 22
+
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+[interactive]
+	diffFilter = diff-highlight

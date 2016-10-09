@@ -37,3 +37,15 @@
 [submodule ".vim/bundle/trailing-whitespace"]
 	path = .vim/bundle/trailing-whitespace
 	url = git@github.com:bronson/vim-trailing-whitespace.git
+[submodule ".vim/bundle/vim-css3-syntax"]
+	path = .vim/bundle/vim-css3-syntax
+	url = git@github.com:hail2u/vim-css3-syntax.git
+[submodule ".vim/bundle/nerdtree-tabs"]
+	path = .vim/bundle/nerdtree-tabs
+	url = git@github.com:jistr/vim-nerdtree-tabs.git
+[submodule ".vim/bundle/xtract"]
+	path = .vim/bundle/xtract
+	url = git@github.com:rstacruz/vim-xtract.git
+[submodule ".vim/bundle/tcomment"]
+	path = .vim/bundle/tcomment
+	url = git@github.com:tomtom/tcomment_vim.git

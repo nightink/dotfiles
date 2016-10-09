@@ -16,6 +16,7 @@ set number
 syntax enable
 " vim 主题
 colorscheme monokai
+" common setting
 set shiftwidth=2
 set tabstop=2
 
@@ -31,9 +32,34 @@ let g:syntastic_javascript_checkers = ['eslint']
 " node.vim
 autocmd User Node if &filetype == "javascript" | setlocal expandtab | endif
 
+" nerdtree
 let NERDTreeWinPos="left"
 let NERDTreeWinSize=30
 let NERDTreeShowHidden=1
 
+" nerdtree tabs config
+" let g:nerdtree_tabs_open_on_console_startup=1
+
 " Vim
 let g:indentLine_color_term=239
+
+" VimCSS3Syntax
+augroup VimCSS3Syntax
+  autocmd!
+  autocmd FileType less setlocal iskeyword+=-
+augroup END
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+" Enable folding with the spacebar
+nnoremap <space> za
+
+au BufNewFile,BufRead *.py
+\ set tabstop=2
+\ set softtabstop=2
+\ set shiftwidth=2
+\ set textwidth=79
+\ set expandtab
+\ set autoindent
+\ set fileformat=unix
