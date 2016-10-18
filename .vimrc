@@ -11,6 +11,9 @@ source ~/.vim_runtime/my_configs.vim
 catch
 endtry
 
+" bundle install
+call pathogen#infect('~/.vim/bundle/{}')
+
 " my config
 set number
 syntax enable
@@ -24,13 +27,13 @@ set tabstop=2
 set fileencodings=ucs-bom,utf-8,euc-cn,cp936,default,latin1
 set enc=utf-8
 
-" bundle install
-call pathogen#infect('~/.vim/bundle/{}')
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+" Enable folding with the spacebar
+nnoremap <space> za
 
-let g:syntastic_javascript_checkers = ['eslint']
-
-" node.vim
-autocmd User Node if &filetype == "javascript" | setlocal expandtab | endif
+set runtimepath^=~/.vim/bundle/ag
 
 " nerdtree
 let NERDTreeWinPos="left"
@@ -40,8 +43,9 @@ let NERDTreeShowHidden=1
 " nerdtree tabs config
 " let g:nerdtree_tabs_open_on_console_startup=1
 
-" Vim
+" Vim indentLine
 let g:indentLine_color_term=239
+let g:indentLine_leadingSpaceEnabled = 1
 
 " VimCSS3Syntax
 augroup VimCSS3Syntax
@@ -49,17 +53,17 @@ augroup VimCSS3Syntax
   autocmd FileType less setlocal iskeyword+=-
 augroup END
 
-" Enable folding
-set foldmethod=indent
-set foldlevel=99
-" Enable folding with the spacebar
-nnoremap <space> za
+" undo file when every time
+try
+  set undodir=~/dotfiles/.undo_dir
+  set undofile
+catch
+endtry
 
-au BufNewFile,BufRead *.py
-\ set tabstop=2
-\ set softtabstop=2
-\ set shiftwidth=2
-\ set textwidth=79
-\ set expandtab
-\ set autoindent
-\ set fileformat=unix
+" NERDTreeTabsToggle
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
+
+" node.vim
+autocmd User Node if &filetype == "javascript" | setlocal expandtab | endif
+" javascript lint checker
+let g:syntastic_javascript_checkers = ['eslint']

@@ -15,7 +15,7 @@ ZSH_THEME="robbyrussell"
 # brew install tree
 # alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
-alias zshconfig="subl ~/.zshrc"
+
 # npm mirror
 alias cnpm="npm --registry=https://registry.npm.taobao.org \
 --cache=$HOME/.npm/.cache/cnpm \
@@ -78,7 +78,8 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-
+autoload -U promptinit; promptinit
+prompt pure
 export PROMPT="😂 🤐 👻  $PROMPT"
 
 #Docker
