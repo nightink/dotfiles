@@ -59,7 +59,7 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git svn autojump extract gitignore nvm emoji tmux node colored-man-pages)
+plugins=(git svn autojump extract gitignore nvm emoji tmux node colored-man-pages zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 

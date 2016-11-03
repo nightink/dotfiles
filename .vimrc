@@ -17,8 +17,14 @@ call pathogen#infect('~/.vim/bundle/{}')
 " my config
 set number
 syntax enable
+
 " vim 主题
+" set background=dark
 colorscheme monokai
+" Remove this line if using the default palette.
+" let g:hybrid_reduced_contrast = 1
+" let g:hybrid_custom_term_colors = 1
+
 " common setting
 set shiftwidth=2
 set tabstop=2
@@ -38,7 +44,7 @@ set runtimepath^=~/.vim/bundle/ag
 " nerdtree
 let NERDTreeWinPos="left"
 let NERDTreeWinSize=30
-let NERDTreeShowHidden=1
+" let NERDTreeShowHidden=1
 
 " nerdtree tabs config
 " let g:nerdtree_tabs_open_on_console_startup=1
@@ -53,17 +59,48 @@ augroup VimCSS3Syntax
   autocmd FileType less setlocal iskeyword+=-
 augroup END
 
-" undo file when every time
-try
-  set undodir=~/dotfiles/.undo_dir
-  set undofile
-catch
-endtry
-
-" NERDTreeTabsToggle
-map <Leader>n <plug>NERDTreeTabsToggle<CR>
-
 " node.vim
 autocmd User Node if &filetype == "javascript" | setlocal expandtab | endif
-" javascript lint checker
+
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+"
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+
+" javascript lint checker @hotoo
+function! SyntasticJavaScriptChecker()
+  let l:eslint = 'eslint'
+
+  if executable('npm')
+    let l:npm_bin = split(system('npm bin'), '\n')[0]
+
+    if strlen(l:npm_bin)
+      let l:lint_path = l:npm_bin . '/' . 'eslint'
+      if executable(l:lint_path)
+        let l:eslint = l:lint_path
+      endif
+    endif
+  endif
+
+  let b:syntastic_javascript_eslint_exec = l:eslint
+endfunction
+
 let g:syntastic_javascript_checkers = ['eslint']
+autocmd FileType javascript call SyntasticJavaScriptChecker()
+autocmd FileType typescript setlocal completeopt-=menu
+let g:tsuquyomi_completion_detail = 1
+
+" let g:lightline = {
+" \ 'colorscheme': 'wombat',
+" \}
+
+set updatetime=250
+" let g:gitgutter_highlight_lines = 1
+let g:gitgutter_enabled = 1
+
+" airline theme
+let g:airline_theme='hybridline'
