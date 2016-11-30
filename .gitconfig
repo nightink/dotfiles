@@ -9,7 +9,7 @@
 [alias]
   ci = commit
   cv = commit -v
-  co = checkout
+  switch = checkout
   br = branch
   st = status
 
@@ -41,7 +41,7 @@
   renamebr = branch -M
 
   # all parents branch
-  la = log --all --graph --decorate --color
+  tree = log --all --graph --decorate --color
 
   track = update-index --no-assume-unchanged
   untrack = update-index --assume-unchanged

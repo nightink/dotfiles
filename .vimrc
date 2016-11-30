@@ -19,8 +19,11 @@ set number
 syntax enable
 
 " vim 主题
-" set background=dark
+set background=dark
 colorscheme monokai
+" colorscheme hybrid
+" set background=dark
+" colorscheme peaksea
 " Remove this line if using the default palette.
 " let g:hybrid_reduced_contrast = 1
 " let g:hybrid_custom_term_colors = 1
@@ -34,17 +37,19 @@ set fileencodings=ucs-bom,utf-8,euc-cn,cp936,default,latin1
 set enc=utf-8
 
 " Enable folding
+set runtimepath^=~/.vim/bundle/ag
 set foldmethod=indent
 set foldlevel=99
+set updatetime=250
 " Enable folding with the spacebar
 nnoremap <space> za
 
-set runtimepath^=~/.vim/bundle/ag
-
-" nerdtree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => nerdtree config
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let NERDTreeWinPos="left"
 let NERDTreeWinSize=30
-" let NERDTreeShowHidden=1
+let NERDTreeShowHidden=1
 
 " nerdtree tabs config
 " let g:nerdtree_tabs_open_on_console_startup=1
@@ -62,15 +67,14 @@ augroup END
 " node.vim
 autocmd User Node if &filetype == "javascript" | setlocal expandtab | endif
 
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-"
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-javascript config
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:javascript_plugin_jsdoc = 1
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Syntastic javascript
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " javascript lint checker @hotoo
 function! SyntasticJavaScriptChecker()
   let l:eslint = 'eslint'
@@ -94,13 +98,56 @@ autocmd FileType javascript call SyntasticJavaScriptChecker()
 autocmd FileType typescript setlocal completeopt-=menu
 let g:tsuquyomi_completion_detail = 1
 
-" let g:lightline = {
-" \ 'colorscheme': 'wombat',
-" \}
+" 全局视图模式替换
+vmap qq y:%s`<C-R>"``gc<left><left>
 
-set updatetime=250
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-gitgutter
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let g:gitgutter_highlight_lines = 1
 let g:gitgutter_enabled = 1
+let g:gitgutter_sign_added = '✚'
+let g:gitgutter_sign_modified = '➜'
+let g:gitgutter_sign_removed = '✘'
 
-" airline theme
-let g:airline_theme='hybridline'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => lightline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:lightline = {
+      \ 'active': {
+      \   'left': [
+      \     ['mode', 'paste'],
+      \     ['fugitive', 'readonly', 'gitgutter', 'filename', 'modified']
+      \   ],
+      \   'right': [
+      \     [ 'lineinfo', 'syntastic' ],
+      \     ['percent'],
+      \     ['fileformat', 'fileencoding', 'filetype'],
+      \   ]
+      \ },
+      \ 'component_function': {
+      \   'syntastic': 'SyntasticStatuslineFlag',
+      \   'gitgutter': 'MyGitGutter',
+      \ },
+      \ }
+
+function! MyGitGutter()
+  if ! exists('*GitGutterGetHunkSummary')
+        \ || ! get(g:, 'gitgutter_enabled', 0)
+        \ || winwidth('.') <= 90
+    return ''
+  endif
+  let symbols = [
+        \ g:gitgutter_sign_added . ' ',
+        \ g:gitgutter_sign_modified . ' ',
+        \ g:gitgutter_sign_removed . ' '
+        \ ]
+  let hunks = GitGutterGetHunkSummary()
+  let ret = []
+  for i in [0, 1, 2]
+    if hunks[i] > 0
+      call add(ret, symbols[i] . hunks[i])
+    endif
+  endfor
+  return join(ret, ' ')
+endfunction
