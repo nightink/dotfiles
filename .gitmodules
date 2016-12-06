@@ -49,3 +49,9 @@
 [submodule ".vim/bundle/typescript-vim"]
 	path = .vim/bundle/typescript-vim
 	url = git@github.com:leafgarland/typescript-vim.git
+[submodule ".vim/bundle/tagbar"]
+	path = .vim/bundle/tagbar
+	url = git@github.com:majutsushi/tagbar.git
+[submodule ".vim/bundle/ale"]
+	path = .vim/bundle/ale
+	url = git@github.com:w0rp/ale.git

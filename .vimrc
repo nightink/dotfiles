@@ -22,7 +22,6 @@ syntax enable
 set background=dark
 colorscheme monokai
 " colorscheme hybrid
-" set background=dark
 " colorscheme peaksea
 " Remove this line if using the default palette.
 " let g:hybrid_reduced_contrast = 1
@@ -55,6 +54,7 @@ let NERDTreeShowHidden=1
 " let g:nerdtree_tabs_open_on_console_startup=1
 
 " Vim indentLine
+let g:indentLine_enabled = 1
 let g:indentLine_color_term=239
 let g:indentLine_leadingSpaceEnabled = 1
 
@@ -93,13 +93,29 @@ function! SyntasticJavaScriptChecker()
   let b:syntastic_javascript_eslint_exec = l:eslint
 endfunction
 
-let g:syntastic_javascript_checkers = ['eslint']
-autocmd FileType javascript call SyntasticJavaScriptChecker()
-autocmd FileType typescript setlocal completeopt-=menu
-let g:tsuquyomi_completion_detail = 1
+" let g:syntastic_javascript_checkers = ['eslint']
+" autocmd FileType javascript call SyntasticJavaScriptChecker()
+" autocmd FileType typescript setlocal completeopt-=menu
+" let g:tsuquyomi_completion_detail = 1
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 全局视图模式替换
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 vmap qq y:%s`<C-R>"``gc<left><left>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => ale
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible
+filetype off
+
+let &runtimepath.=',~/.vim/bundle/ale'
+
+filetype plugin on
+
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-gitgutter
