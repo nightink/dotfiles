@@ -18,14 +18,15 @@ call pathogen#infect('~/.vim/bundle/{}')
 set number
 syntax enable
 
+" Remove this line if using the default palette.
+" let g:hybrid_reduced_contrast = 1
+" let g:hybrid_custom_term_colors = 1
+
 " vim 主题
 set background=dark
 colorscheme monokai
 " colorscheme hybrid
 " colorscheme peaksea
-" Remove this line if using the default palette.
-" let g:hybrid_reduced_contrast = 1
-" let g:hybrid_custom_term_colors = 1
 
 " common setting
 set shiftwidth=2
@@ -44,16 +45,18 @@ set updatetime=250
 nnoremap <space> za
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => nerdtree config
+" => Nerdtree config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let NERDTreeWinPos="left"
-let NERDTreeWinSize=30
+let NERDTreeWinSize=32
 let NERDTreeShowHidden=1
-
 " nerdtree tabs config
 " let g:nerdtree_tabs_open_on_console_startup=1
 
 " Vim indentLine
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vim indentLine
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:indentLine_enabled = 1
 let g:indentLine_color_term=239
 let g:indentLine_leadingSpaceEnabled = 1
@@ -96,7 +99,6 @@ endfunction
 " let g:syntastic_javascript_checkers = ['eslint']
 " autocmd FileType javascript call SyntasticJavaScriptChecker()
 " autocmd FileType typescript setlocal completeopt-=menu
-" let g:tsuquyomi_completion_detail = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 全局视图模式替换
@@ -110,12 +112,12 @@ set nocompatible
 filetype off
 
 let &runtimepath.=',~/.vim/bundle/ale'
-
 filetype plugin on
-
 let g:ale_linters = {
-\   'javascript': ['eslint'],
-\}
+  \   'javascript': ['eslint'],
+  \}
+
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-gitgutter
@@ -133,16 +135,16 @@ let g:lightline = {
       \ 'active': {
       \   'left': [
       \     ['mode', 'paste'],
-      \     ['fugitive', 'readonly', 'gitgutter', 'filename', 'modified']
+      \     ['fugitive', 'readonly', 'gitgutter', 'filename', 'modified', 'syntastic']
       \   ],
       \   'right': [
-      \     [ 'lineinfo', 'syntastic' ],
+      \     [ 'lineinfo' ],
       \     ['percent'],
       \     ['fileformat', 'fileencoding', 'filetype'],
       \   ]
       \ },
       \ 'component_function': {
-      \   'syntastic': 'SyntasticStatuslineFlag',
+      \   'syntastic': 'ALEGetStatusLine',
       \   'gitgutter': 'MyGitGutter',
       \ },
       \ }

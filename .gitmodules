@@ -7,12 +7,6 @@
 [submodule ".vim/bundle/indentLine"]
 	path = .vim/bundle/indentLine
 	url = git@github.com:Yggdroot/indentLine.git
-[submodule ".vim/bundle/javascript-syntax"]
-	path = .vim/bundle/javascript-syntax
-	url = git@github.com:jelera/vim-javascript-syntax.git
-[submodule ".vim/bundle/jsdoc"]
-	path = .vim/bundle/jsdoc
-	url = git@github.com:heavenshell/vim-jsdoc.git
 [submodule ".vim/bundle/json"]
 	path = .vim/bundle/json
 	url = git@github.com:elzr/vim-json.git
@@ -25,9 +19,6 @@
 [submodule ".vim/bundle/jsx"]
 	path = .vim/bundle/jsx
 	url = git@github.com:mxw/vim-jsx.git
-[submodule ".vim/bundle/es6"]
-	path = .vim/bundle/es6
-	url = git@github.com:isRuslan/vim-es6.git
 [submodule ".vim/bundle/trailing-whitespace"]
 	path = .vim/bundle/trailing-whitespace
 	url = git@github.com:bronson/vim-trailing-whitespace.git
@@ -61,3 +52,12 @@
 [submodule ".vim/bundle/YouCompleteMe"]
 	path = .vim/bundle/YouCompleteMe
 	url = git@github.com:Valloric/YouCompleteMe.git
+[submodule ".vim/bundle/vim-hybrid"]
+	path = .vim/bundle/vim-hybrid
+	url = git@github.com:w0ng/vim-hybrid.git
+[submodule ".vim/bundle/vim-es6"]
+	path = .vim/bundle/vim-es6
+	url = git@github.com:isRuslan/vim-es6.git
+[submodule ".vim/bundle/vim-javascript-syntax"]
+	path = .vim/bundle/vim-javascript-syntax
+	url = git@github.com:jelera/vim-javascript-syntax.git
