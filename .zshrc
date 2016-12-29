@@ -22,6 +22,7 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 --disturl=https://npm.taobao.org/dist \
 --userconfig=$HOME/.cnpmrc"
 
+alias r='npm run'
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -80,7 +81,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 autoload -U promptinit; promptinit
 prompt pure
-export PROMPT="😂 🤐 👻  $PROMPT"
+export PROMPT="😂 🤐 🤤 👻  $PROMPT"
 
 #Docker
 # eval "$(docker-machine env default)"

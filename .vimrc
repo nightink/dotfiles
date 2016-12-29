@@ -19,13 +19,13 @@ set number
 syntax enable
 
 " Remove this line if using the default palette.
-" let g:hybrid_reduced_contrast = 1
+let g:hybrid_reduced_contrast = 1
 " let g:hybrid_custom_term_colors = 1
 
 " vim 主题
 set background=dark
-colorscheme monokai
-" colorscheme hybrid
+" colorscheme monokai
+colorscheme hybrid
 " colorscheme peaksea
 
 " common setting
