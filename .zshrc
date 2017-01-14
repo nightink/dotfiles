@@ -23,6 +23,7 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 --userconfig=$HOME/.cnpmrc"
 
 alias r='npm run'
+alias v='vim package.json'
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
