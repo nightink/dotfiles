@@ -67,7 +67,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=~/tmpbin:$PATH
+export PATH=~/.tmpbin:~/.cli:$PATH
 export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -80,8 +80,6 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-autoload -U promptinit; promptinit
-prompt pure
 export PROMPT="😂 🤐 🤤 👻  $PROMPT"
 
 #Docker
