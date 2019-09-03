@@ -22,8 +22,15 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 --disturl=https://npm.taobao.org/dist \
 --userconfig=$HOME/.cnpmrc"
 
-alias r='npm run'
-alias v='vim package.json'
+alias lv="exa --long --header --git"
+
+alias r="npm run"
+alias v="vim package.json"
+alias gclean="git branch | egrep -v '\*|m-seaster' | xargs git br -D"
+# alias rr = "projj run"
+
+export GPG_TTY=$(tty)
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -61,17 +68,17 @@ alias v='vim package.json'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git svn autojump extract gitignore nvm emoji tmux node colored-man-pages zsh-syntax-highlighting)
+plugins=(git svn autojump extract gitignore nvm emoji tmux node colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=~/.tmpbin:~/.cli:$PATH
+export PATH=~/.tmpbin:$PATH
 export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 
@@ -80,7 +87,9 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-export PROMPT="😂 🤐 🤤 👻  $PROMPT"
+export PROMPT="🤢 $PROMPT"
 
 #Docker
 # eval "$(docker-machine env default)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

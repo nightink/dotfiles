@@ -24,8 +24,8 @@ let g:hybrid_reduced_contrast = 1
 
 " vim 主题
 set background=dark
-" colorscheme monokai
 colorscheme hybrid
+" colorscheme monokai
 " colorscheme peaksea
 
 " common setting
@@ -34,7 +34,6 @@ set tabstop=2
 
 " gbk 编码格式
 set fileencodings=ucs-bom,utf-8,euc-cn,cp936,default,latin1
-set enc=utf-8
 
 " Enable folding
 set runtimepath^=~/.vim/bundle/ag
@@ -55,7 +54,6 @@ let g:ctrlsf_ackprg = 'ag'
 let NERDTreeWinPos="left"
 let NERDTreeWinSize=32
 let NERDTreeShowHidden=1
-" nerdtree tabs config
 " let g:nerdtree_tabs_open_on_console_startup=1
 
 " Vim indentLine
@@ -80,30 +78,6 @@ autocmd User Node if &filetype == "javascript" | setlocal expandtab | endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:javascript_plugin_jsdoc = 1
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Syntastic javascript
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" javascript lint checker @hotoo
-function! SyntasticJavaScriptChecker()
-  let l:eslint = 'eslint'
-
-  if executable('npm')
-    let l:npm_bin = split(system('npm bin'), '\n')[0]
-
-    if strlen(l:npm_bin)
-      let l:lint_path = l:npm_bin . '/' . 'eslint'
-      if executable(l:lint_path)
-        let l:eslint = l:lint_path
-      endif
-    endif
-  endif
-
-  let b:syntastic_javascript_eslint_exec = l:eslint
-endfunction
-
-" let g:syntastic_javascript_checkers = ['eslint']
-" autocmd FileType javascript call SyntasticJavaScriptChecker()
-" autocmd FileType typescript setlocal completeopt-=menu
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 全局视图模式替换
@@ -174,3 +148,27 @@ function! MyGitGutter()
   endfor
   return join(ret, ' ')
 endfunction
+
+" => tagbar
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_type_javascript = {
+  \ 'ctagstype': 'javascript',
+  \ 'kinds': [
+  \ 'A:arrays',
+  \ 'P:properties',
+  \ 'T:tags',
+  \ 'o:object',
+  \ 'O:objects',
+  \ 'G:generator functions',
+  \ 'f:function',
+  \ 'F:functions',
+  \ 'C:constructors/classes',
+  \ 'M:methods',
+  \ 'V:variables',
+  \ 'I:imports',
+  \ 'E:exports',
+  \ 'S:styled components'
+  \ ]}
+
+" => xxxx
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>

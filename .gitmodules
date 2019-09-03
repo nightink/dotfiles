@@ -16,9 +16,6 @@
 [submodule ".vim/bundle/nerdtree-git-plugin"]
 	path = .vim/bundle/nerdtree-git-plugin
 	url = git@github.com:Xuyuanp/nerdtree-git-plugin.git
-[submodule ".vim/bundle/jsx"]
-	path = .vim/bundle/jsx
-	url = git@github.com:mxw/vim-jsx.git
 [submodule ".vim/bundle/trailing-whitespace"]
 	path = .vim/bundle/trailing-whitespace
 	url = git@github.com:bronson/vim-trailing-whitespace.git
@@ -64,3 +61,9 @@
 [submodule ".vim/bundle/vim-vue"]
 	path = .vim/bundle/vim-vue
 	url = git@github.com:posva/vim-vue.git
+[submodule ".vim/bundle/vim-prettier"]
+	path = .vim/bundle/vim-prettier
+	url = git@github.com:prettier/vim-prettier.git
+[submodule ".vim/bundle/jsx-pretty"]
+	path = .vim/bundle/jsx-pretty
+	url = git@github.com:MaxMEllon/vim-jsx-pretty.git

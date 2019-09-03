@@ -1,6 +1,7 @@
 [user]
   name = nightink
   email = chceyes@gmail.com
+  signingkey = DD438E6A55E80C8E
 
 [core]
   excludesfile = ~/.gitignore_global
@@ -69,6 +70,7 @@
 
 [commit]
   template = ~/.git-commit-template.txt
+  gpgsign = false
 
 [diff]
   algorithm = patience
@@ -106,3 +108,5 @@
 
 [interactive]
   diffFilter = diff-highlight
+[gpg]
+  program = gpg
