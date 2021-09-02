@@ -28,9 +28,12 @@ colorscheme hybrid
 " colorscheme monokai
 " colorscheme peaksea
 
+set foldlevelstart=99
+
 " common setting
 set shiftwidth=2
 set tabstop=2
+set ts=2
 
 " gbk 编码格式
 set fileencodings=ucs-bom,utf-8,euc-cn,cp936,default,latin1
@@ -48,14 +51,6 @@ nnoremap <space> za
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlsf_ackprg = 'ag'
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Nerdtree config
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let NERDTreeWinPos="left"
-let NERDTreeWinSize=32
-let NERDTreeShowHidden=1
-" let g:nerdtree_tabs_open_on_console_startup=1
-
 " Vim indentLine
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim indentLine
@@ -63,6 +58,19 @@ let NERDTreeShowHidden=1
 let g:indentLine_enabled = 1
 let g:indentLine_color_term=239
 let g:indentLine_leadingSpaceEnabled = 1
+" let g:indentLine_fileTypeExclud= ['_.*', 'NERD_tree*']
+
+" fix Nerdtree Indentation
+autocmd BufEnter NERD_tree* :LeadingSpaceDisable
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Nerdtree config
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let NERDTreeWinPos="left"
+let NERDTreeWinSize=32
+let NERDTreeShowHidden=1
+let NERDTreeNodeDelimiter = "\t"
+" let g:nerdtree_tabs_open_on_console_startup=1
 
 " VimCSS3Syntax
 augroup VimCSS3Syntax
@@ -94,8 +102,10 @@ let &runtimepath.=',~/.vim/bundle/ale'
 filetype plugin on
 let g:ale_linters = {
   \   'javascript': ['eslint'],
+  \   'typescript': ['tslint'],
   \}
 
+" let g:ale_linters_ignore = {'typescript': ['tslint']}
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -169,6 +179,10 @@ let g:tagbar_type_javascript = {
   \ 'E:exports',
   \ 'S:styled components'
   \ ]}
+
+" 支付宝小程序
+au BufRead,BufNewFile *.acss setlocal ft=less
+au BufRead,BufNewFile *.axml setlocal ft=xml
 
 " => xxxx
 nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>

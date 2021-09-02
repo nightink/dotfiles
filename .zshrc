@@ -14,7 +14,6 @@ ZSH_THEME="robbyrussell"
 # Example aliases
 # brew install tree
 # alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
-alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
 # npm mirror
 alias cnpm="npm --registry=https://registry.npm.taobao.org \
@@ -27,6 +26,7 @@ alias lv="exa --long --header --git"
 alias r="npm run"
 alias v="vim package.json"
 alias gclean="git branch | egrep -v '\*|m-seaster' | xargs git br -D"
+alias f="git commit -m \"f\""
 # alias rr = "projj run"
 
 export GPG_TTY=$(tty)
@@ -74,7 +74,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=~/.tmpbin:$PATH
+# export PATH=~/.tmpbin:$PATH
 export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -91,5 +91,15 @@ export PROMPT="🤢 $PROMPT"
 
 #Docker
 # eval "$(docker-machine env default)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+# export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home"
+export JAVA_HOME="$(/usr/libexec/java_home -v '1.8.0')"
+export PATH=$JAVA_HOME/bin:$PATH

@@ -6,6 +6,7 @@
 [core]
   excludesfile = ~/.gitignore_global
   ignorecase = false
+  quotepath = false
 
 [alias]
   ci = commit
